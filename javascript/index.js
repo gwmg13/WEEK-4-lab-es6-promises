@@ -74,7 +74,7 @@ obtainInstruction("steak", 0)
                   document.querySelector("#steak").innerHTML += `<li>${step}</li>`
                   document.querySelector("#steak").innerHTML += `<li>Steak is ready!.</li>`
                 })
-                .catch((error) => console.error(error))
+                  .catch((error) => console.error(error))
               })
               .catch(function (error) {
                 console.error(error);
@@ -92,6 +92,38 @@ obtainInstruction("steak", 0)
 
 // Iteration 3 using async/await
 // ...
+
+
+async function makeBroccoli() {
+  try {
+    let step;
+    step = await obtainInstruction("broccoli", 0);
+    printStep(step);
+    step = await obtainInstruction("broccoli", 1);
+    printStep(step);
+    step = await obtainInstruction("broccoli", 2);
+    printStep(step);
+    step = await obtainInstruction("broccoli", 3);
+    printStep(step);
+    step = await obtainInstruction("broccoli", 4);
+    printStep(step);
+    step = await obtainInstruction("broccoli", 5);
+    printStep(step);
+    step = await obtainInstruction("broccoli", 6);
+    printStep(step);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function printStep(step) {
+  document.querySelector("#broccoli").innerHTML += `<li>${step}</li>`
+}
+
+makeBroccoli();
+
+
+
 
 // Bonus 2 - Promise all
 
